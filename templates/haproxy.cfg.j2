@@ -66,6 +66,7 @@ backend {{ _backend.name }}
 {%     endif %}
 {% for _server in _backend.servers %}
     server {{ _server.name }} {{ _server.address }} {% if _backend.mode == 'http' %}cookie {{ _server.name }} check {% endif %}
+
 {% endfor %}
 {%   endfor %}
 {% else %}
