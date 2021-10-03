@@ -51,6 +51,7 @@ frontend {{ haproxy_frontend_name }}
     mode {{ haproxy_frontend_mode }}
     default_backend {{ haproxy_backend_name }}
 {% endif %}
+
 {% if haproxy_backends is defined %}
 {%   for _backend in haproxy_backends %}
 backend {{ _backend.name }}
